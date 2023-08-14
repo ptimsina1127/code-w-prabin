@@ -14,6 +14,7 @@ Node *tail;
 
 public:
 DoublyLinkedList();
+DoublyLinkedList(DoublyLinkedList &copyObj);
 void addElement(int x);
 
 void printElements();

@@ -7,6 +7,10 @@ DoublyLinkedList::DoublyLinkedList(){
      tail = nullptr;   
     }
 
+DoublyLinkedList::DoublyLinkedList(DoublyLinkedList &copyObj){
+    head = copyObj.head;
+    tail = copyObj.tail;
+}
 void DoublyLinkedList::addElement(int x){
     Node *newnode = new Node();
     newnode->Value=x;
@@ -22,6 +26,7 @@ void DoublyLinkedList::addElement(int x){
     tail->nextNode= newnode;
     tail = newnode; 
 }
+
 void DoublyLinkedList::printElements(){
 Node *currentNode =head;
 while (currentNode!=nullptr){
@@ -39,6 +44,11 @@ classobj.addElement(14);
 classobj.addElement(39);
 classobj.addElement(12);
 classobj.printElements();
+
+DoublyLinkedList newclassobj(classobj);
+
+newclassobj.printElements();
+
 
     return 0;
 }
