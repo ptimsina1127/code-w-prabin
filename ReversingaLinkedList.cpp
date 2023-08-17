@@ -15,9 +15,9 @@ class LinkedList{
     Node  *head = nullptr;
     void insertElements(int elem){
         Node *newnode = new Node;
-        newnode->next = nullptr;
         newnode->value = elem;
-        
+        newnode->next = nullptr;
+
         if (head == nullptr){
             head = newnode;
         }
@@ -39,7 +39,7 @@ class LinkedList{
 
     Node *reverseFunction(Node *temphead){
         if (temphead->next==nullptr){
-            head = temphead;
+            //head = temphead;
             return temphead;
         }
         Node *remaining = reverseFunction(temphead->next);
@@ -61,7 +61,8 @@ int main (){
     link.insertElements(9);
     link.printFunction();
     cout<<endl;
-    link.head = link.reverseFunction(link.head);
-    link.printFunction();
+    LinkedList link2;
+    link2.head = link.reverseFunction(link.head);
+    link2.printFunction();
     return 0;
 }
