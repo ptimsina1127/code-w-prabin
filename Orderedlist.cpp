@@ -14,7 +14,7 @@ class sortedlist{
     }
     void additem(T value){
         if (isfull()){
-            cout<<"The list is FUll";
+            cout<<"The list is Full";
             return;
         }
         if (listlen==0){
